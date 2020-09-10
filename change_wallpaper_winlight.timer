@@ -1,0 +1,12 @@
+[Unit]
+Description=Change the wallpaper every 15 minutes
+RefuseManualStart=no
+RefuseManualStop=no
+ 
+[Timer]
+Persistent=false
+OnCalendar=*-*-* *:00,15,30,45:00
+Unit=change_wallpaper_winlight.service
+ 
+[Install]
+WantedBy=default.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=Choose a random Winlight wallpaper
+RefuseManualStart=no
+RefuseManualStop=yes
+ 
+[Service]
+Type=oneshot
+ExecStart=/home/nico/.local/bin/change_wallpaper_winlight.sh
