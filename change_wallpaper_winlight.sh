@@ -8,6 +8,13 @@ WANTED_EXT="jpg"
 VALID_RESOLUTION=0
 LOOP_COUNTER=0
 
+# This is for MATE
+GSETTING_PATH="org.mate.background"
+GSETTING_VAR="picture-filename"
+# This is for Gnome
+#GSETTING_PATH="org.gnome.desktop.background"
+#GSETTING_VAR="picture-uri"
+
 ## Code
 
 # Create a listing of every image in ${IMAGE_DIR}
@@ -32,7 +39,7 @@ while [ $VALID_RESOLUTION -eq 0 ]; do
 done
 
 # Change the wallpaper
-gsettings set org.mate.background picture-filename "${CANDIDATE_FILE}"
+gsettings set ${GSETTING_PATH} ${GSETTING_VAR} "${CANDIDATE_FILE}"
 
 # Log the change
 logger -p info -t ${0} "After ${LOOP_COUNTER} loop, we changed the wallpaper to ${CANDIDATE_FILE}"
